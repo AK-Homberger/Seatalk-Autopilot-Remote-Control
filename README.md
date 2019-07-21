@@ -7,7 +7,7 @@ My special thanks to users of www.segeln-forum.de for testing.
 # Hardware
 The circuit diagram and the PCB layout are shown in the hardware section of this repository.
 
-I made the PCB available at aisler.net (https://aisler.net/p/LCDCUVMF).
+I made the PCB available at aisler.net (https://aisler.net/p/LCDCUVMF). Minimum number is three pieces for about 24 EUR. So it makes sense to buy once and share with others interested in the remote control.
 
 The circuit implements mainly an interface between the Seatalk bus (12 Volt) and the Arduino (5 Volt).
 The easiest way was to use the 74LS07 open collector driver device. This is much easier than most of the other implementations I have seen so far. The PCB also contains the voltage regulator (12-14 Volt from Seatalk bus to 5 Volt for the Arduino) and a 433 MHz receiver. Please select/buy the right ProMicro device (5 Volt). There are also 3.3 Volt devices available. But the 3.3 Volt devices will not work.
