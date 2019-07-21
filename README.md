@@ -30,12 +30,14 @@ As Arduino board for the ProMicro you can either use the standard Arduino "Leona
 
 The software is using several additional Arduino libraries (RCSwitch, Adafruit_GFX, Adafruit_SSD1306). These libraries have to be downloaded and installed. 
 
+The software is sending a beep to the Raymarine devices (Seatalk alarm function). This helps to get a feedback regarding the recognition of of a pressed key. The LED on the PCB blinks in addition if keys are sucessfully recognised. This should also help with trouble shooting.
+
 # Programming the 433 MHz KeyFob
 
 You should change the four codes in the software to individual random numbers. The same codes have to be copied to the "_433_Programming.ino". Only for programming you will also need a 433 MHZ sender connected to the ProMicro.
-I use an ProMicro on a "bread boerd" to program the codes. 
+I used a ProMicro on a "bread board" to program the codes. 
 
-Send each code individually and programm the keys of the remote according to the programming description of your KeyFob).
+Send each code individually and programm the keys of the remote according to the programming description of your KeyFob.
 
 Key 1 = button A = -1 degree
 Key 2 = button B =  +0 degree
@@ -44,4 +46,4 @@ Key 4 = button D = +10 degrees
 
 Have fun with the remote control.
 
-Plese be aware that this repository is only for educational purpose, to learn how to use the seatalk protocol. Use it on your own risk and do not use it for critical systems in real life environments.
+Please be aware that this repository is only for educational purpose, to learn how to use the seatalk protocol. Use it on your own risk and do not use it for critical systems in real life environments.
