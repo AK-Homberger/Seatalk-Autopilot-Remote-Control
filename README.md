@@ -40,6 +40,6 @@ Key 2 = button B =  +0 degree
 Key 3 = button C = -10 degeees
 Key 4 = button D = +10 degrees
 
-Have fun with the remote control..
+Have fun with the remote control.
 
 Plese be aware that this repository is only for educational purpose, to learn how to use the seatalk protocol. Use it on your own risk and do not use it for critical systems in real life environments.
