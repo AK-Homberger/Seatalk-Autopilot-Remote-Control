@@ -3,10 +3,12 @@
 This repository shows how to build a Seatalk Autopilot Remote Control device based on an Arduino Pro Micro and a simple 433 MHz KeyFob. It has been tested sucessfully with different Raymarine autopilots.
 
 # Hardware
-A PCB is available at aisler.net (https://aisler.net/p/LCDCUVMF).
+The circuit diagram and the PCB layout are shown in harwdware section of this nrepository.
+
+A PCB is available at aisler.net (https://aisler.net/p/LCDCUVMF) for abou 21 EUR for three board.
 
 The circuit implements mainly an interface between the Seatalk bus (12 Volt) and the Arduino (5 Volt).
-The easiest way was to use the 74LS07 open collector driver device. This is much easier than most of the other implementations I have seen so far. The PCB also contains the voltage regulator (12-14 Volt from Seatalk bus to 5 Volt for the Arduino) and a 433 MhZ receiver. Please select/buy the right ProMicro device (5 Volt). Ther are also 3.3 Volt devices available. 
+The easiest way was to use the 74LS07 open collector driver device. This is much easier than most of the other implementations I have seen so far. The PCB also contains the voltage regulator (12-14 Volt from Seatalk bus to 5 Volt for the Arduino) and a 433 MhZ receiver. Please select/buy the right ProMicro device (5 Volt). There are also 3.3 Volt devices available. But the 3.3 Volt devices will not work.
 
 Please also select a high quality receiver which fits to the PCB design (RXB6). As antenna please use a short wire (e.g. 7,3 cm).
 
@@ -18,7 +20,7 @@ The used Seatalk codes are drived from Thomas Knauf (http://www.thomasknauf.de/r
 # Software
 The Seatalk communication is a 9 bit serial protocol. This is not directly supported from Arduino. But I found a working 9 bit hardware serial implementation. For convienience, I have added the working source code here because there a different versions available (in github and elsewhere).
 
-Caution: The 9 bit harware serial implementaion is depending on the correct version of the Ardunio IDE and the ProMicro board information. IDE 1.6.13  and board version 1.6.15 are working. Later versions changed the hardware serial implementation and the 9 bit changes will not work.
+Caution: The 9 bit hardware serial implementaion is depending on the correct version of the Ardunio IDE and the ProMicro board information. IDE 1.6.13  and board version 1.6.15 are working. Later versions changed the hardware serial implementation and the 9 bit changes will not work.
 
 The three files from "NewHWSworking" have to be copied into the Arduino directory on you local PC e.g.: "C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino".
 
