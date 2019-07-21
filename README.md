@@ -5,7 +5,7 @@ This repository shows how to build a Seatalk Autopilot Remote Control device bas
 # Hardware
 The circuit diagram and the PCB layout are shown in the hardware section of this repository.
 
-A PCB is available at aisler.net (https://aisler.net/p/LCDCUVMF) for abou 21 EUR for three board.
+A PCB is available at aisler.net (https://aisler.net/p/LCDCUVMF) for about 21 EUR for three board.
 
 The circuit implements mainly an interface between the Seatalk bus (12 Volt) and the Arduino (5 Volt).
 The easiest way was to use the 74LS07 open collector driver device. This is much easier than most of the other implementations I have seen so far. The PCB also contains the voltage regulator (12-14 Volt from Seatalk bus to 5 Volt for the Arduino) and a 433 MHz receiver. Please select/buy the right ProMicro device (5 Volt). There are also 3.3 Volt devices available. But the 3.3 Volt devices will not work.
