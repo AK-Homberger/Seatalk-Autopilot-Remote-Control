@@ -7,7 +7,7 @@
 
 #include <RCSwitch.h>
 
-long unsigned int Key1 = 0000001; / Cange to individual (random) values
+long unsigned int Key1 = 0000001; // Cange to individual (random) values
 long unsigned int Key2 = 0000002;
 long unsigned int Key3 = 0000003;
 long unsigned int Key4 = 0000004;
