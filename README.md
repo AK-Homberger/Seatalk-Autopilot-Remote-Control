@@ -20,7 +20,7 @@ A standard 4 button 433 MHz KeyFob is used to send (+1 / -1 degree) and (+10 / -
 The used Seatalk codes are derived from Thomas Knauf (http://www.thomasknauf.de/rap/seatalk2.htm ). Many thanks for this excellent piece of work.
 
 # Software
-The Seatalk communication is a 9 bit serial protocol. This is not directly supported from Arduino. But I found a working 9 bit hardware serial implementation. For convenience, I have added the working source code here because there a different versions available (in github and elsewhere).
+The Seatalk communication is a 9 bit serial protocol. This is not directly supported from Arduino. But I found a working 9 bit hardware serial implementation. For convenience, I have added the working source code here, because there are different versions available (in github and elsewhere).
 
 Caution: The 9 bit hardware serial implementaion is depending on the correct version of the Ardunio IDE and the ProMicro board information. IDE 1.6.13  and board version 1.6.15 are working. Later versions changed the hardware serial implementation and the 9 bit changes will not work.
 
