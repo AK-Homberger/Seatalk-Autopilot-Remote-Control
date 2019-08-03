@@ -4,6 +4,11 @@ This repository shows how to build a Seatalk Autopilot Remote Control device bas
 
 My special thanks to users of www.segeln-forum.de for testing.
 
+Update:
+
+Version 1.1 03.08.19: Added support for Auto and Standby (Key 5 and 6).
+
+
 # Hardware
 The circuit diagram and the PCB layout are shown in the hardware section of this repository.
 
