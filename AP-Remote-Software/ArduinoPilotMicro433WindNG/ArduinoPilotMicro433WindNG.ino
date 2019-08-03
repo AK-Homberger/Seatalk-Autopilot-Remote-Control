@@ -1,3 +1,4 @@
+
 /*  
   This code is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -12,7 +13,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// Version 1.0, 21.07.2019, AK-Homberger
+// Version 1.1, 03.08.2019, AK-Homberger
 
 #include <avr/pgmspace.h>
 #include <RCSwitch.h>
@@ -24,12 +25,16 @@
 #define OLED_RESET 4
 Adafruit_SSD1306 display(OLED_RESET);
 
+#define Auto_Standby_Support 0  // Set this to 1 to support Standby and Auto for Key 5 and 6
+
 RCSwitch mySwitch = RCSwitch();
 
-const long unsigned int Key1 PROGMEM = 0000001; // Change values to individual values programmed to remote control
-const long unsigned int Key2 PROGMEM = 0000002;
-const long unsigned int Key3 PROGMEM = 0000003;
-const long unsigned int Key4 PROGMEM = 0000004;
+const long unsigned int Key_Minus_1 PROGMEM = 0000001; // Change values to individual values programmed to remote control
+const long unsigned int Key_Plus_1 PROGMEM = 0000002;
+const long unsigned int Key_Minus_10 PROGMEM = 0000003;
+const long unsigned int Key_Plus_10 PROGMEM = 0000004;
+const long unsigned int Key_Auto PROGMEM = 0000005;
+const long unsigned int Key_Standby PROGMEM = 0000006;
 
 // Seatalk datagrams
 
@@ -39,6 +44,9 @@ const PROGMEM uint16_t ST_Minus_1[] =  { 0x186, 0x21, 0x05, 0xFA };
 const PROGMEM uint16_t ST_Minus_10[] = { 0x186, 0x21, 0x06, 0xF9 };
 const PROGMEM uint16_t ST_Plus_1[] =   { 0x186, 0x21, 0x07, 0xF8 };
 const PROGMEM uint16_t ST_Plus_10[] =  { 0x186, 0x21, 0x08, 0xF7 };
+const PROGMEM uint16_t ST_Auto[] =     { 0x186, 0x21, 0x01, 0xFE };
+const PROGMEM uint16_t ST_Standby[] =  { 0x186, 0x21, 0x02, 0xFD };
+
 
 const PROGMEM uint16_t ST_BeepOn[] =  { 0x1A8, 0x53, 0x80, 0x00, 0x00, 0xD3 };
 const PROGMEM uint16_t ST_BeepOff[] = { 0x1A8, 0x43, 0x80, 0x00, 0x00, 0xC3 };
@@ -179,7 +187,7 @@ void loop()
 
     mySwitch.resetAvailable();
 
-    if (value == Key1) {
+    if (value == Key_Minus_1) {
       Display("-1", 7);
       sendDatagram(ST_Minus_1);
       sendDatagram(ST_BeepOn);
@@ -187,7 +195,7 @@ void loop()
       sendDatagram(ST_BeepOff);
     }
 
-    if (value == Key2) {
+    if (value == Key_Plus_1) {
       Display("+1", 7);
       sendDatagram(ST_Plus_1);
       sendDatagram(ST_BeepOn);
@@ -195,7 +203,7 @@ void loop()
       sendDatagram(ST_BeepOff);
     }
 
-    if (value == Key3) {
+    if (value == Key_Minus_10) {
       Display("-10", 7);
       sendDatagram(ST_Minus_10);
       sendDatagram(ST_BeepOn);
@@ -203,9 +211,17 @@ void loop()
       sendDatagram(ST_BeepOff);
     }
 
-    if (value == Key4) {
-      Display("+10", 7);
-      sendDatagram(ST_Plus_10);
+    if ((value == Key_Auto)  && (Auto_Standby_Support==1)) {
+      Display("Auto", 7);
+      sendDatagram(ST_Auto);
+      sendDatagram(ST_BeepOn);
+      delay(150);
+      sendDatagram(ST_BeepOff);
+    }
+    
+    if ((value == Key_Standby)  && (Auto_Standby_Support==1)) {
+      Display("Standby", 7);
+      sendDatagram(ST_Standby);
       sendDatagram(ST_BeepOn);
       delay(150);
       sendDatagram(ST_BeepOff);
