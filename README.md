@@ -54,6 +54,7 @@ Key 3 = button C = -10 degrees
 
 Key 4 = button D = +10 degrees
 
+If you use Auto/Standby function you also have to program the two additional buttons accordingly.
 
 Have fun with the remote control.
 
