@@ -8,6 +8,7 @@ Update:
 
 Version 1.1 03.08.19: Added support for Auto and Standby (Key 5 and 6).
 
+![Autopilot Remote](https://github.com/AK-Homberger/NMEA2000-VoyageDataRecorder/blob/master/ESP32-SD.png)
 
 # Hardware
 The circuit diagram and the PCB layout are shown in the hardware section of this repository.
