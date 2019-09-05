@@ -4,9 +4,10 @@ This repository shows how to build a Seatalk Autopilot Remote Control device bas
 
 My special thanks to users of www.segeln-forum.de for testing.
 
-Update:
+# Update:
 
-Version 1.1 03.08.19: Added support for Auto and Standby (Key 5 and 6).
+- Version 1.1 03.08.19: Added support for Auto and Standby (Key 5 and 6).
+- Added new programming code (_433_Programming_New.ino) to simplify programming of KeyFob without recompiling and upload for each key.
 
 ![Autopilot Remote](https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/IMG_0857.JPG)
 
