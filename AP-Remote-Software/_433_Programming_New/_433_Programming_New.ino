@@ -8,8 +8,8 @@
 
 #include <RCSwitch.h>
 
-long unsigned int Key[] = {0000001, 0000002, 0000003, 0000004 };
-int Keys = 4;
+long unsigned int Key[] = {1000001, 1000002, 1000003, 1000004 };
+int Keys = sizeof(Key)/sizeof(unsigned long); // Number of key is calculated atomatically
 
 
 RCSwitch mySwitch = RCSwitch();
@@ -19,7 +19,7 @@ void setup() {
   Serial.begin(9600);
 
   delay(1000);
-  Serial.println("Press 'Send' to start programming or press Key on remote to see the value.");
+  Serial.println("Press 'Send' to start programming or press a key on remote to see the value.");
 
 
   mySwitch.enableTransmit(10); // Transmitter is connected to Arduino Pin #10
@@ -55,7 +55,7 @@ void loop() {
   for (i = 0; i < Keys; i++) {
 
      Serial.print("Sending Key: ");
-     Serial.print(i);
+     Serial.print(i+1);
      Serial.print(", Value: ");
      Serial.println(Key[i]);
      Serial.println("Press 'Send' for next Key.");
@@ -68,5 +68,5 @@ void loop() {
     Serial.println();
     while (Serial.available()) Serial.read();
   }
-  Serial.println("Press 'Send' to start programming or press Key on remote to see the value.");
+  Serial.println("Press 'Send' to start programming or press a key on remote to see the value.");
 }
