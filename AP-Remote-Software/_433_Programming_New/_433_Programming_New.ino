@@ -43,7 +43,7 @@ void loop() {
 
     if (mySwitch.available()) {
       long unsigned int value = mySwitch.getReceivedValue();
-      Serial.print("Receiveed Key: ");
+      Serial.print("Received Key: ");
       Serial.println(value);
       mySwitch.resetAvailable();
     }
