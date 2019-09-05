@@ -43,10 +43,10 @@ The software is sending a beep to the Raymarine devices (Seatalk alarm function)
 
 # Programming the 433 MHz KeyFob
 
-You should change the four codes in the software to individual random numbers. The same codes have to be copied to the "_433_Programming_New.ino". Only for programming you will also need a 433 MHZ sender connected to the ProMicro.
+You should change the four codes in the software to individual random numbers. The same codes have to be copied to the "_433_Programming_New.ino". Only for programming you will also need a 433 MHz sender connected to the ProMicro.
 I used a ProMicro on a "bread board" to program the codes. 
 
-Send each code individually and programm the keys of the remote according to the programming description of your KeyFob. Press "Send" button in serial console for next key;
+Send each code individually and programm the keys of the remote according to the programming description of your KeyFob. Press "Send" button in serial console for next key. 
 
 Key 1 = button A = -1 degree
 
@@ -56,7 +56,7 @@ Key 3 = button C = -10 degrees
 
 Key 4 = button D = +10 degrees
 
-If you use Auto/Standby function you also have to program the two additional buttons accordingly.
+If you use Auto/Standby function you also have to program the two additional buttons accordingly. After programming you can check directly if codes are programmed correctly. Just press the key on the remote and check if the shown value is correct.
 
 Have fun with the remote control.
 
