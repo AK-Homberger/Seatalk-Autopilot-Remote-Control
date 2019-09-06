@@ -8,7 +8,7 @@
 
 #include <RCSwitch.h>
 
-long unsigned int Key[] = {1000001, 1000002, 1000003, 1000004 };
+unsigned long Key[] = {1000001, 1000002, 1000003, 1000004 };
 int Keys = sizeof(Key)/sizeof(unsigned long); // Number of keys is calculated atomatically
 
 
