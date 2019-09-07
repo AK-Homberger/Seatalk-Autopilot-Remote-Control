@@ -9,7 +9,7 @@
 #include <RCSwitch.h>
 
 unsigned long Key[] = {1000001, 1000002, 1000003, 1000004 };
-int Keys = sizeof(Key)/sizeof(unsigned long); // Number of keys is calculated atomatically
+int Keys = sizeof(Key) / sizeof(unsigned long); // Number of keys is calculated atomatically
 
 
 RCSwitch mySwitch = RCSwitch();
@@ -38,7 +38,7 @@ void setup() {
 
 void loop() {
   int i;
-  
+
   while (!Serial.available()) {    // Receive Key Codes until Send was pressed
 
     if (mySwitch.available()) {
@@ -53,12 +53,11 @@ void loop() {
   Serial.println();
 
   for (i = 0; i < Keys; i++) {
-
-     Serial.print("Sending Key: ");
-     Serial.print(i+1);
-     Serial.print(", Value: ");
-     Serial.println(Key[i]);
-     Serial.println("Press 'Send' for next Key.");
+    Serial.print("Sending Key: ");
+    Serial.print(i + 1);
+    Serial.print(", Value: ");
+    Serial.println(Key[i]);
+    Serial.println("Press 'Send' for next Key.");
 
     while (!Serial.available()) {
       mySwitch.send(Key[i], 24);
@@ -66,6 +65,7 @@ void loop() {
       delay(100);
     }
     Serial.println();
+
     while (Serial.available()) Serial.read();
   }
   Serial.println("Press 'Send' to start programming or press a key on remote to see the value.");
