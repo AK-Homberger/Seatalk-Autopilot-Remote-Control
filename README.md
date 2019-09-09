@@ -37,7 +37,11 @@ The three files from "NewHWSworking" have to be copied into the Arduino director
 
 As Arduino board for the ProMicro you can either use the standard Arduino "Leonardo" board information or the ProMicro  SparkFun implementation: https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide . Both will work.
 
-The software is using several additional Arduino libraries (RCSwitch, Adafruit_GFX, Adafruit_SSD1306). These libraries have to be downloaded and installed. 
+The software is using several additional Arduino libraries (RCSwitch, Adafruit_GFX, Adafruit_SSD1306). These libraries have to be downloaded and installed.
+
+https://github.com/sui77/rc-switch
+https://github.com/adafruit/Adafruit-GFX-Library
+https://github.com/adafruit/Adafruit_SSD1306
 
 The software is sending a beep to the Raymarine devices (Seatalk alarm function). This helps to get a feedback regarding the recognition of of a pressed key. The LED on the PCB blinks in addition if keys are successfully recognised. This should also help with trouble shooting.
 
