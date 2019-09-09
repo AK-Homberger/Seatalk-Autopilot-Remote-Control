@@ -46,7 +46,7 @@ The software is sending a beep to the Raymarine devices (Seatalk alarm function)
 You should change the four codes in the software to individual random numbers. The same codes have to be copied to the "_433_Programming_New.ino". Only for programming you will also need a 433 MHz sender connected to the ProMicro.
 I used a ProMicro on a "bread board" to program the codes. 
 
-![Connections]https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/Programming%20connections.JPG
+![Connections](https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/Programming%20connections.JPG)
 
 Send each code individually and programm the keys of the remote according to the programming description of your KeyFob. Press "Send" button in serial console for next key. 
 
