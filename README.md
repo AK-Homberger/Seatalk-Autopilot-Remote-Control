@@ -26,6 +26,8 @@ The PCB also allows the connection of a standard OLED device (SSD1306) to show t
 A standard 4 button 433 MHz KeyFob is used to send (+1 / -1 degree) and (+10 / -10 degrees) course changes to the autopilot.
 The used Seatalk codes are derived from Thomas Knauf (http://www.thomasknauf.de/rap/seatalk2.htm ). Many thanks for this excellent piece of work.
 
+The software is sending a beep to the Raymarine devices (Seatalk alarm function). This helps to get a feedback regarding the recognition of of a pressed key. The LED on the PCB blinks in addition if keys are successfully recognised. This should also help with trouble shooting.
+
 Since version 1.1 it supports now also Auto and Standby remote control. You have to use a 6 button KeyFob or an additional 2 or 4 button remote for controling Auto/Standby function.
 
 # Software
@@ -42,8 +44,6 @@ The software is using several additional Arduino libraries (RCSwitch, Adafruit_G
 - https://github.com/sui77/rc-switch
 - https://github.com/adafruit/Adafruit-GFX-Library
 - https://github.com/adafruit/Adafruit_SSD1306
-
-The software is sending a beep to the Raymarine devices (Seatalk alarm function). This helps to get a feedback regarding the recognition of of a pressed key. The LED on the PCB blinks in addition if keys are successfully recognised. This should also help with trouble shooting.
 
 # Programming the 433 MHz KeyFob
 
