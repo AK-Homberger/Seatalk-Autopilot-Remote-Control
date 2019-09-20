@@ -211,6 +211,14 @@ void loop()
       sendDatagram(ST_BeepOff);
     }
 
+    if (value == Key_Plus_10) {
+      Display("+10", 7);
+      sendDatagram(ST_Plus_10);
+      sendDatagram(ST_BeepOn);
+      delay(150);
+      sendDatagram(ST_BeepOff);
+    }
+
     if ((value == Key_Auto)  && (Auto_Standby_Support==1)) {
       Display("Auto", 7);
       sendDatagram(ST_Auto);
