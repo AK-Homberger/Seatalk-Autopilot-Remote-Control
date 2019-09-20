@@ -13,7 +13,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// Version 1.1, 03.08.2019, AK-Homberger
+// Version 1.1, 29.09.2019, AK-Homberger
 
 #include <avr/pgmspace.h>
 #include <RCSwitch.h>
