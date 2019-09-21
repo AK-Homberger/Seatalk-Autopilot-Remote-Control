@@ -1,5 +1,4 @@
-
-/*  
+/*
   This code is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
@@ -13,7 +12,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// Version 1.1, 20.09.2019, AK-Homberger
+// Version 1.2, 21.09.2019, AK-Homberger
 
 #include <avr/pgmspace.h>
 #include <RCSwitch.h>
@@ -52,9 +51,9 @@ const PROGMEM uint16_t ST_BeepOn[] =  { 0x1A8, 0x53, 0x80, 0x00, 0x00, 0xD3 };
 const PROGMEM uint16_t ST_BeepOff[] = { 0x1A8, 0x43, 0x80, 0x00, 0x00, 0xC3 };
 
 boolean blink = true;
-long unsigned int timer=0;
-long unsigned int timer1=0;
-long unsigned int timer2=0;
+long unsigned int timer = 0;
+long unsigned int timer1 = 0;
+long unsigned int timer2 = 0;
 
 boolean sendDatagram(const uint16_t data[]) {
   int i = 0; int j = 0;
@@ -122,7 +121,7 @@ int checkWind(char * AWS)     // Receice apparent wind speed from bus
       inbyte = Serial1.read();
       if (inbyte == 0x01) {   // AWS Setalk command
         delay(3);
-        xx = Serial1.read();  
+        xx = Serial1.read();
         delay(3);
         y = Serial1.read();
         wind = (xx & 0x7f) + (y / 10);  // Wind speed
@@ -138,18 +137,30 @@ void setup()
 {
   Serial.begin( 9600 );  // Serial out put for function checks with PC
   Serial1.begin( 4800, SERIAL_9N1 );  // Set the Seatalk modus - 9 bit
-  Serial1.setTimeout(5);  
+  Serial1.setTimeout(5);
 
   mySwitch.enableReceive(4);  // RF Receiver on inerrupt 4 => that is pin 7 on Micro
 
   pinMode(9, OUTPUT);         // LED to show if keys are received
   digitalWrite(9, HIGH);
 
+  pinMode(20, OUTPUT);         // Buzzer to show if keys are received
+  digitalWrite(20, LOW);
+  
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x64 from Conrad else 3D)
   display.setTextColor(WHITE);
   Display("Start", 4);
-  
+
   sendDatagram(ST_NMEA_BridgeID);   // Send NMEA Seatakl BridgeID to make Seatalk to Seatalk NG converter happy
+}
+
+
+void Beep(void) {
+  sendDatagram(ST_BeepOn);
+  digitalWrite(20, HIGH);
+  delay(150);
+  sendDatagram(ST_BeepOff);
+  digitalWrite(20, LOW);
 }
 
 
@@ -158,22 +169,22 @@ void loop()
   int i;
   char AWS[4] = "";
 
-  timer++;timer1++;timer2++;
+  timer++; timer1++; timer2++;
 
   if (timer > 200000 ) {
     Display("---", 7);              // Show --- after about two seconds when no wind data is received
-    timer = 0;  
+    timer = 0;
   }
 
   if (timer1 > 300000 ) {
     sendDatagram(ST_BeepOff);       // Additional Beep off after three seconds
-    timer1 = 0;  
+    timer1 = 0;
   }
 
 
   if (timer2 > 1000000 ) {
     sendDatagram(ST_NMEA_BridgeID); // Send NMEA Seatakl BridgeID every 10 seconds to make Seatalk to Seatalk NG converter happy
-    timer2 = 0;  
+    timer2 = 0;
   }
 
 
@@ -198,41 +209,31 @@ void loop()
     if (value == Key_Plus_1) {
       Display("+1", 7);
       sendDatagram(ST_Plus_1);
-      sendDatagram(ST_BeepOn);
-      delay(150);
-      sendDatagram(ST_BeepOff);
+      Beep();
     }
 
     if (value == Key_Minus_10) {
       Display("-10", 7);
       sendDatagram(ST_Minus_10);
-      sendDatagram(ST_BeepOn);
-      delay(150);
-      sendDatagram(ST_BeepOff);
+      Beep();
     }
 
     if (value == Key_Plus_10) {
       Display("+10", 7);
       sendDatagram(ST_Plus_10);
-      sendDatagram(ST_BeepOn);
-      delay(150);
-      sendDatagram(ST_BeepOff);
+      Beep();
     }
 
-    if ((value == Key_Auto)  && (Auto_Standby_Support==1)) {
+    if ((value == Key_Auto)  && (Auto_Standby_Support == 1)) {
       Display("Auto", 7);
       sendDatagram(ST_Auto);
-      sendDatagram(ST_BeepOn);
-      delay(150);
-      sendDatagram(ST_BeepOff);
+      Beep();
     }
-    
-    if ((value == Key_Standby)  && (Auto_Standby_Support==1)) {
+
+    if ((value == Key_Standby)  && (Auto_Standby_Support == 1)) {
       Display("Standby", 7);
       sendDatagram(ST_Standby);
-      sendDatagram(ST_BeepOn);
-      delay(150);
-      sendDatagram(ST_BeepOff);
+      Beep();
     }
 
     i = 0;
@@ -243,4 +244,3 @@ void loop()
     }
   }
 }
-
