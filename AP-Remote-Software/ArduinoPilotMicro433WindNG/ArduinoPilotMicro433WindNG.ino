@@ -201,9 +201,7 @@ void loop()
     if (value == Key_Minus_1) {
       Display("-1", 7);
       sendDatagram(ST_Minus_1);
-      sendDatagram(ST_BeepOn);
-      delay(150);
-      sendDatagram(ST_BeepOff);
+      Beep();
     }
 
     if (value == Key_Plus_1) {
