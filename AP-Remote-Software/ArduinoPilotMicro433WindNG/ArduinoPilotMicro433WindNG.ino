@@ -12,7 +12,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// Version 1.2, 21.09.2019, AK-Homberger
+// Version 1.3, 13.12.2019, AK-Homberger
 
 #include <avr/pgmspace.h>
 #include <RCSwitch.h>
@@ -21,8 +21,12 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define OLED_RESET 4
-Adafruit_SSD1306 display(OLED_RESET);
+#define SCREEN_WIDTH 128 // OLED display width, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+
+// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
+#define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 #define Auto_Standby_Support 0  // Set this to 1 to support Standby and Auto for Key 5 and 6
 
