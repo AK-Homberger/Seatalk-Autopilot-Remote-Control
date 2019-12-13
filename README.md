@@ -6,6 +6,7 @@ My special thanks to users of www.segeln-forum.de for testing.
 
 # Update:
 
+- Version 1.3 - 13.12.19: Added definition for certain OLED displays that require this to work properly.
 - Version 1.2 - 21.09.19: Added buzzer support on pin 20 (active 5 Volt buzzer works without additional transitor).
 - Version 1.1 - 03.08.19: Added support for Auto and Standby (Key 5 and 6).
 - Added new programming code (_433_Programming_New.ino) to simplify programming of KeyFob without recompiling and upload for each key.
