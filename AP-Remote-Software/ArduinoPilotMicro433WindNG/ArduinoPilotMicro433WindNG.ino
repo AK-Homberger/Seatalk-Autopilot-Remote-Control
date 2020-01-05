@@ -66,7 +66,7 @@ boolean sendDatagram(const uint16_t data[]) {
   unsigned int inbyte;
   unsigned int outbyte;
 
-  bytes = (pgm_read_byte_near(data + 1) & 0x0f) + 3; // Messege length is minimum 3, additional bytes in nibble 4
+  bytes = (pgm_read_byte_near(data + 1) & 0x0f) + 3; // Message length is minimum 3, additional bytes in nibble 4
 
   while (j < 5 ) { // CDMA/CD 5 tries
     while (Serial1.available ()) {  // Wait for silence on the bus
@@ -111,7 +111,7 @@ void Display(char *string, int size)
 }
 
 
-int checkWind(char * AWS)     // Receice apparent wind speed from bus
+int checkWind(char * AWS)     // Receive apparent wind speed from bus
 {
   unsigned int xx;
   unsigned int y;
@@ -129,7 +129,7 @@ int checkWind(char * AWS)     // Receice apparent wind speed from bus
         delay(3);
         y = Serial1.read();
         wind = (xx & 0x7f) + (y / 10);  // Wind speed
-        if (wind < 100) itoa (wind , AWS, 10);  // Greater 100 must be a receive error
+        if (wind < 100) itoa (wind , AWS, 10);  // Bigger 100 must be a receive error
       }
     }
   }
@@ -151,7 +151,7 @@ void setup()
   pinMode(20, OUTPUT);         // Buzzer to show if keys are received
   digitalWrite(20, LOW);
   
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x64 from Conrad else 3D)
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // Initialize with the I2C addr 0x3C (for the 128x64 from Conrad else 3D)
   display.setTextColor(WHITE);
   Display("Start", 4);
 
@@ -187,7 +187,7 @@ void loop()
 
 
   if (timer2 > 1000000 ) {
-    sendDatagram(ST_NMEA_BridgeID); // Send NMEA Seatakl BridgeID every 10 seconds to make Seatalk to Seatalk NG converter happy
+    sendDatagram(ST_NMEA_BridgeID); // Send NMEA Seatalk BridgeID every 10 seconds to make Seatalk to Seatalk NG converter happy
     timer2 = 0;
   }
 
