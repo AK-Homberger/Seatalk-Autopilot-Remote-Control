@@ -25,7 +25,9 @@ Please also select a high quality receiver which fits to the PCB design (RXB6, S
 
 The PCB also allows the connection of a standard OLED device (SSD1306) to show the current apparent wind speed. But this is optional.
 
-The voltage regulator (7805) may require additional cooling (90 mA * 9 Volt = 0,81 Watt). An alternative is the following replacement which has the same pin layout as the 7805: https://www.digikey.de/product-detail/en/w-rth-elektronik/173950578/732-8243-5-ND/5725367?cur=EUR&lang=en
+The voltage regulator (7805) may get quite hot (90 mA * 9 Volt = 0,81 Watt). This is usually not a problem, because it within the specification of the 7805 (< 1,4 Watt).
+
+An alternative which is not getting hot is the following replacement which has the same pin layout as the 7805: https://www.digikey.de/product-detail/en/w-rth-elektronik/173950578/732-8243-5-ND/5725367?cur=EUR&lang=en
 
 A standard 4 button 433 MHz KeyFob is used to send (+1 / -1 degree) and (+10 / -10 degrees) course changes to the autopilot.
 The used Seatalk codes are derived from Thomas Knauf (http://www.thomasknauf.de/rap/seatalk2.htm ). Many thanks for this excellent piece of work.
