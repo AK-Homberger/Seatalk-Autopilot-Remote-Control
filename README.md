@@ -45,6 +45,8 @@ The three files from "HardwareSerial9bit" (or "NewHWSworking" for older IDE) hav
 
 As Arduino board for the ProMicro you can either use the standard Arduino "Leonardo" board information or the ProMicro  SparkFun implementation: https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide . Both will work.
 
+Make sure that you install the ProMicro Board Addon using the Board Manager as described in the hookup guide: https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide#windows_boardaddon
+
 The software is using several additional Arduino libraries (RCSwitch, Adafruit_GFX, Adafruit_SSD1306). These libraries have to be downloaded and installed.
 
 - https://github.com/sui77/rc-switch
