@@ -69,7 +69,7 @@ Have fun with the remote control.
 
 Please be aware that this repository is only for educational purpose, to learn how to use the Seatalk protocol. Use it on your own risk and do not use it for critical systems in real life environments.
 
-# Update:
+# Updates:
 
 - Version 1.3 - 13.12.19: Added definition for certain OLED displays that require this to work properly.
 - Version 1.2 - 21.09.19: Added buzzer support on pin 20 (active 5 Volt buzzer works without additional transitor).
