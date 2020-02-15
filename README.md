@@ -4,13 +4,6 @@ This repository shows how to build a Seatalk Autopilot Remote Control device bas
 
 My special thanks to users of www.segeln-forum.de for testing.
 
-# Update:
-
-- Version 1.3 - 13.12.19: Added definition for certain OLED displays that require this to work properly.
-- Version 1.2 - 21.09.19: Added buzzer support on pin 20 (active 5 Volt buzzer works without additional transitor).
-- Version 1.1 - 03.08.19: Added support for Auto and Standby (Key 5 and 6).
-- Added new programming code (_433_Programming_New.ino) to simplify programming of KeyFob without recompiling and upload for each key.
-
 ![Autopilot Remote](https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/IMG_0857.JPG)
 
 # Hardware
@@ -75,3 +68,10 @@ If you use Auto/Standby function you also have to program the two additional but
 Have fun with the remote control.
 
 Please be aware that this repository is only for educational purpose, to learn how to use the Seatalk protocol. Use it on your own risk and do not use it for critical systems in real life environments.
+
+# Update:
+
+- Version 1.3 - 13.12.19: Added definition for certain OLED displays that require this to work properly.
+- Version 1.2 - 21.09.19: Added buzzer support on pin 20 (active 5 Volt buzzer works without additional transitor).
+- Version 1.1 - 03.08.19: Added support for Auto and Standby (Key 5 and 6).
+- Added new programming code (_433_Programming_New.ino) to simplify programming of KeyFob without recompiling and upload for each key.
