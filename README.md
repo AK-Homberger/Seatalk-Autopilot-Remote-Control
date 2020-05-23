@@ -34,7 +34,7 @@ The Seatalk communication is a 9 bit serial protocol. This is not directly suppo
 
 Caution: The 9 bit hardware serial implementaion is depending on the version of the Ardunio IDE and the ProMicro board information. IDE 1.6.13  and board version 1.6.15 are working with the files in "NewHWSworking". Later versions (e.g. 1.8.10) changed the hardware serial implementation and the 9 bit changes will work work with files in "HardwareSerial9bit".
 
-The three files from "HardwareSerial9bit" (or "NewHWSworking" for older IDE) have to be copied into the Arduino directory on your local PC e.g.: "C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino".
+For newer IDE versions the three files from "HardwareSerial9bit" (or "NewHWSworking" for older IDE) have to be copied into the Arduino directory on your local PC e.g.: "C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino".
 
 As Arduino board for the ProMicro you can either use the standard Arduino "Leonardo" board information or the ProMicro  SparkFun implementation: https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide . Both will work.
 
