@@ -12,7 +12,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// Version 1.3, 13.12.2019, AK-Homberger
+// Version 1.4, 27.07.2019, AK-Homberger
 
 #include <avr/pgmspace.h>
 #include <RCSwitch.h>
@@ -25,19 +25,22 @@
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
-#define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
+#define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 #define Auto_Standby_Support 0  // Set this to 1 to support Standby and Auto for Key 5 and 6
 
+#define KEY_DELAY 300      // 300 ms break between keys
+#define BEEP_DURATION 150  // 150 ms beep time
+
 RCSwitch mySwitch = RCSwitch();
 
-const long unsigned int Key_Minus_1 PROGMEM = 0000001; // Change values to individual values programmed to remote control
-const long unsigned int Key_Plus_1 PROGMEM = 0000002;
-const long unsigned int Key_Minus_10 PROGMEM = 0000003;
-const long unsigned int Key_Plus_10 PROGMEM = 0000004;
-const long unsigned int Key_Auto PROGMEM = 0000005;
-const long unsigned int Key_Standby PROGMEM = 0000006;
+const unsigned long Key_Minus_1 PROGMEM = 1111001; // Change values to individual values programmed to remote control
+const unsigned long Key_Plus_1 PROGMEM = 1111002;
+const unsigned long Key_Minus_10 PROGMEM = 1111003;
+const unsigned long Key_Plus_10 PROGMEM = 1111004;
+const unsigned long Key_Auto PROGMEM = 1111005;
+const unsigned long Key_Standby PROGMEM = 1111006;
 
 // Seatalk datagrams
 
@@ -55,9 +58,14 @@ const PROGMEM uint16_t ST_BeepOn[] =  { 0x1A8, 0x53, 0x80, 0x00, 0x00, 0xD3 };
 const PROGMEM uint16_t ST_BeepOff[] = { 0x1A8, 0x43, 0x80, 0x00, 0x00, 0xC3 };
 
 boolean blink = true;
-long unsigned int timer = 0;
-long unsigned int timer1 = 0;
-long unsigned int timer2 = 0;
+unsigned long wind_timer = 0;   // timer for AWS display
+unsigned long beep_timer2 = 0;  // timer to stop alarm sound
+unsigned long bridge_timer = 0; // timer to send ST Bridge ID every 10 seconds
+
+unsigned long key_time = 0;     // time of last key detected
+unsigned long beep_time = 0;    // timer for beep duration
+bool beep_status = false;
+
 
 boolean sendDatagram(const uint16_t data[]) {
   int i = 0; int j = 0;
@@ -66,7 +74,7 @@ boolean sendDatagram(const uint16_t data[]) {
   unsigned int inbyte;
   unsigned int outbyte;
 
-  bytes = (pgm_read_byte_near(data + 1) & 0x0f) + 3; // Message length is minimum 3, additional bytes in nibble 4
+  bytes = (pgm_read_byte_near(data + 1) & 0x0f) + 3; // Messege length is minimum 3, additional bytes in nibble 4
 
   while (j < 5 ) { // CDMA/CD 5 tries
     while (Serial1.available ()) {  // Wait for silence on the bus
@@ -100,19 +108,18 @@ boolean sendDatagram(const uint16_t data[]) {
 }
 
 
-void Display(char *string, int size)
-{
+void Display(const char *string, int size) {
   display.clearDisplay();
   display.setTextSize(size);
   display.setCursor(0, 0);
   display.println(string);
   display.display();
-  timer = 0;
+  wind_timer = millis();
 }
 
 
-int checkWind(char * AWS)     // Receive apparent wind speed from bus
-{
+// Receive apparent wind speed from bus
+int checkWind(char * AWS) {
   unsigned int xx;
   unsigned int y;
   unsigned int inbyte;
@@ -129,7 +136,7 @@ int checkWind(char * AWS)     // Receive apparent wind speed from bus
         delay(3);
         y = Serial1.read();
         wind = (xx & 0x7f) + (y / 10);  // Wind speed
-        if (wind < 100) itoa (wind , AWS, 10);  // Bigger 100 must be a receive error
+        if (wind < 100) itoa (wind , AWS, 10);  // Greater 100 must be a receive error
       }
     }
   }
@@ -137,8 +144,8 @@ int checkWind(char * AWS)     // Receive apparent wind speed from bus
 }
 
 
-void setup()
-{
+void setup() {
+
   Serial.begin( 9600 );  // Serial out put for function checks with PC
   Serial1.begin( 4800, SERIAL_9N1 );  // Set the Seatalk modus - 9 bit
   Serial1.setTimeout(5);
@@ -150,8 +157,8 @@ void setup()
 
   pinMode(20, OUTPUT);         // Buzzer to show if keys are received
   digitalWrite(20, LOW);
-  
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // Initialize with the I2C addr 0x3C (for the 128x64 from Conrad else 3D)
+
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x64 from Conrad else 3D)
   display.setTextColor(WHITE);
   Display("Start", 4);
 
@@ -159,90 +166,100 @@ void setup()
 }
 
 
-void Beep(void) {
+// Beep on if key received
+void BeepOn(void) {
+
+  if (beep_status == true) return;  // Already On
+
   sendDatagram(ST_BeepOn);
   digitalWrite(20, HIGH);
-  delay(150);
-  sendDatagram(ST_BeepOff);
-  digitalWrite(20, LOW);
+  beep_time = millis();
+  beep_status = true;
 }
 
 
-void loop()
-{
-  int i;
+// Beep off after BEEP_TIME
+void BeepOff(void) {
+
+  if (beep_status == true && millis() > beep_time + BEEP_DURATION) {
+    sendDatagram(ST_BeepOff);
+    digitalWrite(20, LOW);
+    beep_status = false;
+  }
+}
+
+
+void loop() {
+
   char AWS[4] = "";
+  unsigned long value = 0;
 
-  timer++; timer1++; timer2++;
-
-  if (timer > 200000 ) {
+  if (millis() > wind_timer + 2000 ) {
     Display("---", 7);              // Show --- after about two seconds when no wind data is received
-    timer = 0;
+    wind_timer = millis();
   }
 
-  if (timer1 > 300000 ) {
-    sendDatagram(ST_BeepOff);       // Additional Beep off after three seconds
-    timer1 = 0;
+  if (millis() > beep_timer2 + 3000 ) {
+    sendDatagram(ST_BeepOff);       // Additional Beep off after three seconds to avoid constant alarm
+    beep_timer2 = millis();
   }
 
-
-  if (timer2 > 1000000 ) {
-    sendDatagram(ST_NMEA_BridgeID); // Send NMEA Seatalk BridgeID every 10 seconds to make Seatalk to Seatalk NG converter happy
-    timer2 = 0;
+  if (millis() > bridge_timer + 10000 ) {
+    sendDatagram(ST_NMEA_BridgeID); // Send NMEA Seatakl BridgeID every 10 seconds to make Seatalk to Seatalk NG converter happy
+    bridge_timer = millis();
   }
 
-
-  if (checkWind(AWS) > -1) Display(AWS, 7);
+  if (checkWind(AWS) > -1) {
+    Display(AWS, 7);
+    wind_timer = millis();
+  }
 
   if (mySwitch.available()) {
-    long unsigned int value = mySwitch.getReceivedValue();
+    value = mySwitch.getReceivedValue();
+    mySwitch.resetAvailable();
+  }
 
+  if (value > 0 && millis() > key_time + KEY_DELAY) {
+
+    key_time = millis();      // Remember time of last key received
     digitalWrite(9, blink);   // LED on/off
     blink = !blink;           // Toggle LED to show received key
-
-    mySwitch.resetAvailable();
 
     if (value == Key_Minus_1) {
       Display("-1", 7);
       sendDatagram(ST_Minus_1);
-      Beep();
+      BeepOn();
     }
 
     if (value == Key_Plus_1) {
       Display("+1", 7);
       sendDatagram(ST_Plus_1);
-      Beep();
+      BeepOn();
     }
 
     if (value == Key_Minus_10) {
       Display("-10", 7);
       sendDatagram(ST_Minus_10);
-      Beep();
+      BeepOn();
     }
 
     if (value == Key_Plus_10) {
       Display("+10", 7);
       sendDatagram(ST_Plus_10);
-      Beep();
+      BeepOn();
     }
 
     if ((value == Key_Auto)  && (Auto_Standby_Support == 1)) {
       Display("Auto", 7);
       sendDatagram(ST_Auto);
-      Beep();
+      BeepOn();
     }
 
     if ((value == Key_Standby)  && (Auto_Standby_Support == 1)) {
       Display("Standby", 7);
       sendDatagram(ST_Standby);
-      Beep();
-    }
-
-    i = 0;
-    while (mySwitch.available() && i < 2) {
-      mySwitch.resetAvailable();
-      delay (150);
-      i++;
+      BeepOn();
     }
   }
+  BeepOff();
 }
