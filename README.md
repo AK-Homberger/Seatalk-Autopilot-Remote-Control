@@ -40,7 +40,7 @@ As Arduino board for the ProMicro you can either use the standard Arduino "Leona
 
 Make sure that you install the ProMicro Board Addon using the Board Manager as described in the hookup guide: https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide#windows_boardaddon
 
-The software is using several additional Arduino libraries (RCSwitch, Adafruit_GFX, Adafruit_SSD1306). These libraries have to be downloaded and installed.
+The software is using several additional Arduino libraries (RCSwitch, Adafruit_GFX, Adafruit_SSD1306). These libraries have to be downloaded and installed. The easiest way is to add the libraries with the IDE Library Manager.
 
 - https://github.com/sui77/rc-switch
 - https://github.com/adafruit/Adafruit-GFX-Library
