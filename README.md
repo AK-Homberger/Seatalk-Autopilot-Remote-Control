@@ -27,6 +27,9 @@ The used Seatalk codes are derived from Thomas Knauf (http://www.thomasknauf.de/
 
 The software is sending a beep to the Raymarine devices (Seatalk alarm function). This helps to get a feedback regarding the recognition of of a pressed key. The LED on the PCB blinks in addition if keys are successfully recognised. This should also help with trouble shooting. It is also possible to connect an active 5 Volt buzzer to pin 20 (A2) and GND of the ProMicro.
 
+# Caution: Lighthouse III does not react on Seatalk alarm 
+MFDs with Lighthose II will react on the Seatalk alarm function wit a short beep. Unfortunately Lighthouse III is ignoring this alarm. If you prefer to use Lighthouse III then please connect an additonal buzzer to port 20 of the ProMicro.
+
 Since version 1.1 it supports now also Auto and Standby remote control. You have to use a 6 button KeyFob or an additional 2 or 4 button remote for controling Auto/Standby function.
 
 # Software
