@@ -6,7 +6,7 @@ My special thanks to users of www.segeln-forum.de for testing.
 
 ![Autopilot Remote](https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/IMG_0857.JPG)
 
-![Autopilot Schematic](https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/AP-Remote-Hardware/AP%20Remote-sch.pdf)
+![Autopilot Schematic](https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/Remote%20Pilot%20Schematics.png)
 
 # Hardware
 The circuit diagram and the PCB layout are shown in the hardware section of this repository.
