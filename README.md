@@ -84,7 +84,7 @@ Please be aware that this repository is only for educational purpose, to learn h
 - D1 Zenerdiode 5,1 Volt (0,5 Watt) [Link](https://www.reichelt.com/de/en/zener-diode-0-5-w-5-1-v-zf-5-1-p23137.html?&trstct=pos_0&nbc=1)
 - D2 LED, rot, 3 mm [Link](https://www.reichelt.com/de/en/led-3-mm-low-current-red-led-3mm-2ma-rt-p21626.html?&trstct=pos_8&nbc=1)
 - R1 Resistor 10 K, 1/4 watt [Link](https://www.reichelt.com/de/en/metal-film-resistor-10-kohm-0207-250-mw-0-1--arc-mra0207-10k-p237522.html?&trstct=pos_13&nbc=1)
-- R2 Resistor 68 K, 1/4 watt [Link](
+- R2 Resistor 68 K, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-68-kohm-1-4w-68k-p1462.html?&trstct=pos_3&nbc=1)
 - R3 Resistor 27 K, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-27-kohm-1-4w-27k-p1392.html?&trstct=pos_0&nbc=1)
 - R4 Resistor 270 Ohm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-270-ohm-1-4w-270-p1390.html?&trstct=pos_13&nbc=1)
 - R5 Resistor 10 K, 1/4 watt [Link](https://www.reichelt.com/de/en/metal-film-resistor-10-kohm-0207-250-mw-0-1--arc-mra0207-10k-p237522.html?&trstct=pos_13&nbc=1)
