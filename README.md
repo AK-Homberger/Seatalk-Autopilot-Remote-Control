@@ -95,7 +95,7 @@ OLED display,  096 inch, I2C [Link](https://www.makershop.de/en/display/oled/096
 For programming:
 433MHz transmitter [Link](https://www.makershop.de/en/module/funk/superheterodyne-433-mhz-sender/) or [Link2](https://www.makershop.de/en/module/funk/433-sender-empfaenger/)
 
-Remote Control:  [Link](https://www.amazon.de/XCSOURCE-Elektrische-Universal-Garagentor-Fernbedienung-Ersatz-Schl%C3%BCsselanh%C3%A4nger-HS641/dp/B01KJRGMHI/ref=sr_1_9?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=433+mhz+fernbedienung&qid=1601302510&sr=8-9)
+Remote Control:  [Link](https://www.amazon.de/XCSOURCE-Elektrische-Universal-Garagentor-Fernbedienung-Ersatz-Schl%C3%BCsselanh%C3%A4nger-HS641/dp/B01KJRGMHI/ref=sr_1_9?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=433+mhz+fernbedienung&qid=1601302510&sr=8-9) or [Link2](https://www.amazon.de/EasyULT-Handsender-Fernbedienung-Automatische-Garagentor%C3%B6ffner/dp/B0829WXGR5/ref=sr_1_15?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=433+mhz+fernbedienung&qid=1601307082&sr=8-15)
 
 
 # Updates:
