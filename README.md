@@ -76,18 +76,18 @@ Please be aware that this repository is only for educational purpose, to learn h
 
 # Partlist:
 ```
-J1    Connector, AKL 101-03, 3-pin, 5,08 mm 
-J2/J6 RXB6 433 Mhz receiver
-J4    Arduino ProMicro, 5 Volt
-U1	  7805  (alternative: 173950578 MagI3C DC-DC Power Module) 
-U2    7407N (alternative: 74LS07)
-D1    Zenerdiode 5,1 Volt (0,5 Watt)
-D2    LED, rot, 3 mm
-R1    Resistor 10 K, metal, 1/4 watt
-R2    Resistor 68 K, metal, 1/4 watt
-R3    Resistor 27 K, metal, 1/4 watt
-R4    Resistor 270 Ohm, metal, 1/4 watt
-R5    Resistor 10 K, metal, 1/4 watt
+J1 Connector, AKL 101-03, 3-pin, 5,08 mm 
+J2 RXB6 433 Mhz receiver
+J4 Arduino ProMicro, 5 Volt
+U1 7805  (alternative: 173950578 MagI3C DC-DC Power Module) 
+U2 7407N (alternative: 74LS07)
+D1 Zenerdiode 5,1 Volt (0,5 Watt)
+D2 LED, rot, 3 mm
+R1 Resistor 10 K, metal, 1/4 watt
+R2 Resistor 68 K, metal, 1/4 watt
+R3 Resistor 27 K, metal, 1/4 watt
+R4 Resistor 270 Ohm, metal, 1/4 watt
+R5 Resistor 10 K, metal, 1/4 watt
 
 Optional:
 OLED display,  096 inch, I2C, 
