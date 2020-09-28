@@ -91,7 +91,7 @@ Please be aware that this repository is only for educational purpose, to learn h
 
 Optional:
 - OLED display,  096 inch, I2C [Link](https://www.makershop.de/en/display/oled/096-oled-display-blau/)
-- Buzzer  [Link](https://www.makershop.de/en/module/audio/aktiver-summer/)
+- Buzzer  [Link](https://www.makershop.de/en/module/audio/aktiver-summer/) or [Link2](https://www.conrad.de/de/p/makerfactory-mf-6402168-aktiver-summer-2134056.html)
 
 For programming:
 433MHz transmitter [Link](https://www.makershop.de/en/module/funk/superheterodyne-433-mhz-sender/) or [Link2](https://www.makershop.de/en/module/funk/433-sender-empfaenger/)
