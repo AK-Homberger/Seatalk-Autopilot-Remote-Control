@@ -76,7 +76,7 @@ Please be aware that this repository is only for educational purpose, to learn h
 
 # Partlist:
 
-- J1 Connector, AKL 101-03, 3-pin, 5,08 mm (https://eckstein-shop.de/HIMALAYA-basic-Pro-micro-5V-16MHz-Arduino-mini-Leonardo-compatible-board ) 
+- J1 Connector, AKL 101-03, 3-pin, 5,08 mm ![ProMicro](https://eckstein-shop.de/HIMALAYA-basic-Pro-micro-5V-16MHz-Arduino-mini-Leonardo-compatible-board ) 
 - J2 RXB6 433 Mhz receiver
 - J4 Arduino ProMicro, 5 Volt
 - U1 7805  (alternative: 173950578 MagI3C DC-DC Power Module) 
