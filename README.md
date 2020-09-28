@@ -1,4 +1,4 @@
-# Seatalk-Autopilot-Remote-Control
+# Seatalk Autopilot Remote Control
 
 This repository shows how to build a Seatalk Autopilot Remote Control device based on an Arduino Pro Micro and a simple 433 MHz KeyFob. It has been tested successfully with different Raymarine autopilots.
 
