@@ -91,6 +91,7 @@ Please be aware that this repository is only for educational purpose, to learn h
 
 Optional:
 OLED display,  096 inch, I2C [Link](https://www.makershop.de/en/display/oled/096-oled-display-blau/)
+
 Buzzer  [Link](https://www.makershop.de/en/module/audio/aktiver-summer/)
 
 For programming:
