@@ -75,7 +75,7 @@ Have fun with the remote control.
 Please be aware that this repository is only for educational purpose, to learn how to use the Seatalk protocol. Use it on your own risk and do not use it for critical systems in real life environments.
 
 # Partlist:
-```
+
 J1 Connector, AKL 101-03, 3-pin, 5,08 mm ![Link](https://eckstein-shop.de/HIMALAYA-basic-Pro-micro-5V-16MHz-Arduino-mini-Leonardo-compatible-board)
 J2 RXB6 433 Mhz receiver
 J4 Arduino ProMicro, 5 Volt
@@ -91,7 +91,7 @@ R5 Resistor 10 K, metal, 1/4 watt
 
 Optional:
 OLED display,  096 inch, I2C, 
-```
+
 
 # Updates:
 
