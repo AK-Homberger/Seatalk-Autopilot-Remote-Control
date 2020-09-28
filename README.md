@@ -76,18 +76,18 @@ Please be aware that this repository is only for educational purpose, to learn h
 
 # Partlist:
 
-- J1 Connector, AKL 101-03, 3-pin, 5,08 mm [Link](https://www.reichelt.com/index.html?ACTION=446&LA=0&nbc=1&q=akl%20101-03)
-- J2 RXB6 433 Mhz receiver [Link](https://www.makershop.de/en/module/funk/rxb6-433mhz-antenne/)
-- J4 Arduino ProMicro, 5 Volt [Link](https://www.makershop.de/en/plattformen/arduino/pro-micro-mini-usb/) 
-- U1 7805  (alternative: 173950578 MagI3C DC-DC Power Module) [Link](https://www.reichelt.com/de/en/voltage-regulator-up-to-1-5-a-positive-to-220--a-7805-p23443.html?&trstct=pos_0&nbc=1) [Link2](https://www.digikey.de/product-detail/en/w-rth-elektronik/173950578/732-8243-5-ND/5725367?cur=EUR&lang=en)
-- U2 7407N (alternative: 74LS07) [Link](https://www.reichelt.com/de/en/index.html?ACTION=446&LA=446&nbc=1&q=7407n)
-- D1 Zenerdiode 5,1 Volt (0,5 Watt) [Link](https://www.reichelt.com/de/en/zener-diode-0-5-w-5-1-v-zf-5-1-p23137.html?&trstct=pos_0&nbc=1)
-- D2 LED, rot, 3 mm [Link](https://www.reichelt.com/de/en/led-3-mm-low-current-red-led-3mm-2ma-rt-p21626.html?&trstct=pos_8&nbc=1)
-- R1 Resistor 10 K, 1/4 watt [Link](https://www.reichelt.com/de/en/metal-film-resistor-10-kohm-0207-250-mw-0-1--arc-mra0207-10k-p237522.html?&trstct=pos_13&nbc=1)
-- R2 Resistor 68 K, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-68-kohm-1-4w-68k-p1462.html?&trstct=pos_3&nbc=1)
-- R3 Resistor 27 K, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-27-kohm-1-4w-27k-p1392.html?&trstct=pos_0&nbc=1)
-- R4 Resistor 270 Ohm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-270-ohm-1-4w-270-p1390.html?&trstct=pos_13&nbc=1)
-- R5 Resistor 10 K, 1/4 watt [Link](https://www.reichelt.com/de/en/metal-film-resistor-10-kohm-0207-250-mw-0-1--arc-mra0207-10k-p237522.html?&trstct=pos_13&nbc=1)
+- J1    Connector, AKL 101-03, 3-pin, 5,08 mm [Link](https://www.reichelt.com/index.html?ACTION=446&LA=0&nbc=1&q=akl%20101-03)
+- J2    RXB6 433 Mhz receiver [Link](https://www.makershop.de/en/module/funk/rxb6-433mhz-antenne/)
+- J4    Arduino ProMicro, 5 Volt [Link](https://www.makershop.de/en/plattformen/arduino/pro-micro-mini-usb/) 
+- U1    7805  (alternative: 173950578 MagI3C DC-DC Power Module) [Link](https://www.reichelt.com/de/en/voltage-regulator-up-to-1-5-a-positive-to-220--a-7805-p23443.html?&trstct=pos_0&nbc=1) [Link2](https://www.digikey.de/product-detail/en/w-rth-elektronik/173950578/732-8243-5-ND/5725367?cur=EUR&lang=en)
+- U2    7407N (alternative: 74LS07) [Link](https://www.reichelt.com/de/en/index.html?ACTION=446&LA=446&nbc=1&q=7407n)
+- D1    Zenerdiode 5,1 Volt (0,5 Watt) [Link](https://www.reichelt.com/de/en/zener-diode-0-5-w-5-1-v-zf-5-1-p23137.html?&trstct=pos_0&nbc=1)
+- D2    LED, rot, 3 mm [Link](https://www.reichelt.com/de/en/led-3-mm-low-current-red-led-3mm-2ma-rt-p21626.html?&trstct=pos_8&nbc=1)
+- R1,R5 Resistor 10 K, 1/4 watt [Link](https://www.reichelt.com/de/en/metal-film-resistor-10-kohm-0207-250-mw-0-1--arc-mra0207-10k-p237522.html?&trstct=pos_13&nbc=1)
+- R2    Resistor 68 K, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-68-kohm-1-4w-68k-p1462.html?&trstct=pos_3&nbc=1)
+- R3    Resistor 27 K, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-27-kohm-1-4w-27k-p1392.html?&trstct=pos_0&nbc=1)
+- R4    Resistor 270 Ohm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-270-ohm-1-4w-270-p1390.html?&trstct=pos_13&nbc=1)
+
 
 Optional:
 OLED display,  096 inch, I2C [Link](https://www.makershop.de/en/display/oled/096-oled-display-blau/)
