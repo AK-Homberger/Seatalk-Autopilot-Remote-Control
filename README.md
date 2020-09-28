@@ -90,7 +90,12 @@ Please be aware that this repository is only for educational purpose, to learn h
 - R5 Resistor 10 K, 1/4 watt [Link](https://www.reichelt.com/de/en/metal-film-resistor-10-kohm-0207-250-mw-0-1--arc-mra0207-10k-p237522.html?&trstct=pos_13&nbc=1)
 
 Optional:
-OLED display,  096 inch, I2C, 
+OLED display,  096 inch, I2C [Link](https://www.makershop.de/en/display/oled/096-oled-display-blau/)
+
+For programming:
+433MHz transmitter [Link](https://www.makershop.de/en/module/funk/superheterodyne-433-mhz-sender/)
+
+KeyFob  [Link](https://www.amazon.de/XCSOURCE-Elektrische-Universal-Garagentor-Fernbedienung-Ersatz-Schl%C3%BCsselanh%C3%A4nger-HS641/dp/B01KJRGMHI/ref=sr_1_9?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=433+mhz+fernbedienung&qid=1601302510&sr=8-9)
 
 
 # Updates:
