@@ -80,7 +80,7 @@ Please be aware that this repository is only for educational purpose, to learn h
 - J2  RXB6 433 Mhz receiver [Link](https://www.makershop.de/en/module/funk/rxb6-433mhz-antenne/)
 - J4  Arduino ProMicro, 5 Volt [Link](https://www.makershop.de/en/plattformen/arduino/pro-micro-mini-usb/) 
 - U1  7805  (alternative: 173950578 MagI3C DC-DC Power Module) [Link](https://www.reichelt.com/de/en/voltage-regulator-up-to-1-5-a-positive-to-220--a-7805-p23443.html?&trstct=pos_0&nbc=1) or [Link2](https://www.digikey.de/product-detail/en/w-rth-elektronik/173950578/732-8243-5-ND/5725367?cur=EUR&lang=en)
-- U2  7407N (alternative: 74LS07) [Link](https://www.reichelt.com/de/en/index.html?ACTION=446&LA=446&nbc=1&q=7407n) [Link](https://csd-electronics.de/ICs/Logik/74LS/74LS07-DIP14::283.html?pk_campaign=google_shopping&pk_kwd=74LS07-DIP14&gclid=EAIaIQobChMIrLSWjb-O7AIVird3Ch0ClQEdEAQYBCABEgJCdPD_BwE)
+- U2  7407N (alternative: 74LS07) [Link](https://www.reichelt.com/de/en/index.html?ACTION=446&LA=446&nbc=1&q=7407n) or [Link](https://csd-electronics.de/ICs/Logik/74LS/74LS07-DIP14::283.html?pk_campaign=google_shopping&pk_kwd=74LS07-DIP14&gclid=EAIaIQobChMIrLSWjb-O7AIVird3Ch0ClQEdEAQYBCABEgJCdPD_BwE)
 - D1  Zenerdiode 5,1 Volt (0,5 Watt) [Link](https://www.reichelt.com/de/en/zener-diode-0-5-w-5-1-v-zf-5-1-p23137.html?&trstct=pos_0&nbc=1)
 - D2  LED, rot, 3 mm [Link](https://www.reichelt.com/de/en/led-3-mm-low-current-red-led-3mm-2ma-rt-p21626.html?&trstct=pos_8&nbc=1)
 - R1,R5 Resistor 10 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4w-5-10-kilo-ohms-1-4w-10k-p1338.html?&nbc=1)
