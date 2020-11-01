@@ -74,7 +74,7 @@ Have fun with the remote control.
 
 Please be aware that this repository is only for educational purpose, to learn how to use the Seatalk protocol. Use it on your own risk and do not use it for critical systems in real life environments.
 
-# Partlist:
+# Parts:
 
 - J1  Connector, AKL 101-03, 3-pin, 5,08 mm [Link](https://www.reichelt.com/index.html?ACTION=446&LA=0&nbc=1&q=akl%20101-03)
 - J2  RXB6 433 Mhz receiver [Link](https://www.makershop.de/en/module/funk/rxb6-433mhz-antenne/)
