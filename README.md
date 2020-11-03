@@ -62,7 +62,7 @@ Send each code individually and programm the keys of the remote according to the
 
 Key 1 = button A = -1 degree
 
-Key 2 = button B =  +0 degree
+Key 2 = button B =  +1 degree
 
 Key 3 = button C = -10 degrees
 
