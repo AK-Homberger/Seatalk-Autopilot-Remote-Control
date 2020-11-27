@@ -81,11 +81,11 @@ Please be aware that this repository is only for educational purpose, to learn h
 - J4  Arduino ProMicro, 5 Volt [Link](https://eckstein-shop.de/HIMALAYA-basic-Pro-micro-5V-16MHz-Arduino-mini-Leonardo-compatible-board) 
 - U1  7805  (alternative: 173950578 MagI3C DC-DC Power Module) [Link](https://www.reichelt.com/de/en/voltage-regulator-up-to-1-5-a-positive-to-220--a-7805-p23443.html?&trstct=pos_0&nbc=1) or [Link2](https://www.digikey.de/product-detail/en/w-rth-elektronik/173950578/732-8243-5-ND/5725367?cur=EUR&lang=en)
 - U2  7407N (alternative: 74LS07) [Link](https://www.reichelt.com/de/en/index.html?ACTION=446&LA=446&nbc=1&q=7407n) or [Link](https://csd-electronics.de/ICs/Logik/74LS/74LS07-DIP14::283.html?pk_campaign=google_shopping&pk_kwd=74LS07-DIP14&gclid=EAIaIQobChMIrLSWjb-O7AIVird3Ch0ClQEdEAQYBCABEgJCdPD_BwE)
-- D1  Zenerdiode 5,1 Volt (0,5 Watt) [Link](https://www.reichelt.com/de/en/zener-diode-0-5-w-5-1-v-zf-5-1-p23137.html?&trstct=pos_0&nbc=1)
+- D1  Zenerdiode 5.1 Volt (0.5 Watt) [Link](https://www.reichelt.com/de/en/zener-diode-0-5-w-5-1-v-zf-5-1-p23137.html?&trstct=pos_0&nbc=1)
 - D2  LED, rot, 3 mm [Link](https://www.reichelt.com/de/en/led-3-mm-low-current-red-led-3mm-2ma-rt-p21626.html?&trstct=pos_8&nbc=1)
 - R1,R5 Resistor 10 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4w-5-10-kilo-ohms-1-4w-10k-p1338.html?&nbc=1)
-- R2  Resistor 68 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-68-kohm-1-4w-68k-p1462.html?&nbc=1)
-- R3  Resistor 27 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-27-kohm-1-4w-27k-p1392.html?&nbc=1)
+- R2  Resistor 6.8 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-6-8-kohm-1-4w-6-8k-p1453.html?&nbc=1)
+- R3  Resistor 6.8 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-6-8-kohm-1-4w-6-8k-p1453.html?&nbc=1)
 - R4  Resistor 270 Ohm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-270-ohm-1-4w-270-p1390.html?&nbc=1)
 
 
@@ -101,6 +101,7 @@ Remote Control (KeyFob):  [Link](https://www.amazon.de/XCSOURCE-Elektrische-Univ
 
 # Updates:
 
+- Version 1.4 - 27.11.20: Changed R2 and R3 to 6.8 KOhm to eliminate problems with some 74LS07 devices (see issues).
 - Version 1.4 - 27.07.20: Use of millis() funtion to avoid delay() and timer counter in loop(). Improved detection of 433MHz keys.
 - Version 1.3 - 13.12.19: Added definition for certain OLED displays that require this to work properly.
 - Version 1.2 - 21.09.19: Added buzzer support on pin 20 (active 5 Volt buzzer works without additional transitor).
