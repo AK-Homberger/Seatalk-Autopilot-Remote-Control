@@ -101,6 +101,7 @@ Remote Control (KeyFob):  [Link](https://www.amazon.de/XCSOURCE-Elektrische-Univ
 
 # Updates:
 
+- Version 1.4 - 28.11.20: Changed R2 and R3 back to 68 KOhm / 27 kOhm.
 - Version 1.4 - 27.11.20: Changed R2 and R3 to 6.8 KOhm to eliminate problems with some 74LS07 devices (see issue "R3 wrong value?" for details).
 - Version 1.4 - 27.07.20: Use of millis() funtion to avoid delay() and timer counter in loop(). Improved detection of 433MHz keys.
 - Version 1.3 - 13.12.19: Added definition for certain OLED displays that require this to work properly.
