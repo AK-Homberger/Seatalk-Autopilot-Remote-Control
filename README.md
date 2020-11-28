@@ -84,8 +84,8 @@ Please be aware that this repository is only for educational purpose, to learn h
 - D1  Zenerdiode 5.1 Volt (0.5 Watt) [Link](https://www.reichelt.com/de/en/zener-diode-0-5-w-5-1-v-zf-5-1-p23137.html?&trstct=pos_0&nbc=1)
 - D2  LED, rot, 3 mm [Link](https://www.reichelt.com/de/en/led-3-mm-low-current-red-led-3mm-2ma-rt-p21626.html?&trstct=pos_8&nbc=1)
 - R1,R5 Resistor 10 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4w-5-10-kilo-ohms-1-4w-10k-p1338.html?&nbc=1)
-- R2  Resistor 6.8 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-6-8-kohm-1-4w-6-8k-p1453.html?&nbc=1)
-- R3  Resistor 6.8 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-6-8-kohm-1-4w-6-8k-p1453.html?&nbc=1)
+- R2  Resistor 68 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-68-kohm-1-4w-68k-p1462.html?&nbc=1)
+- R3  Resistor 27 KOhm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-27-kohm-1-4w-27k-p1392.html?&nbc=1)
 - R4  Resistor 270 Ohm, 1/4 watt [Link](https://www.reichelt.com/de/en/carbon-film-resistor-1-4-w-5-270-ohm-1-4w-270-p1390.html?&nbc=1)
 
 
