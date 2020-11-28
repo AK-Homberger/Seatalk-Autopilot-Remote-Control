@@ -34,7 +34,7 @@ Since version 1.1 it supports now also Auto and Standby remote control. You have
 # Caution: Lighthouse III does not react on Seatalk Alarm 
 MFDs with Lighthose II will react on the Seatalk alarm function with a short beep. Unfortunately, Lighthouse III is ignoring this alarm. If you prefer to use Lighthouse III then please connect an additonal buzzer to pin 20 of the ProMicro.
 
-#Problem with some 74LS07 variants
+# Problem with some 74LS07 variants
 It seems that there are different types of 74LS07 devices available with slightly different electrical charcteristics. See issue "R3 wrong value?" for details.
 If you get a "Send Error" problem (with 12 Volt connected) then the solution is to lower the value of R3. It is important to check two voltages. With Satalk signal line high (12 Volt) the voltage on pin 3 of 74LS07 (or alternatively on cathode of D1, which is easier to measure) should be above 2 Volt. When Seatalk pulled to GND (low) the voltage on pin3 should be less than 0.8 Volt.
 
