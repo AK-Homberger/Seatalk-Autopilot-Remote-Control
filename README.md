@@ -2,11 +2,11 @@
 
 This repository shows how to build a Seatalk Autopilot Remote Control device based on an Arduino Pro Micro and a simple 433 MHz KeyFob. It has been tested successfully with different Raymarine autopilots.
 
-With the 433 MHz sender you can send -1 / +1 degree and -10 / +10 degrees. Wit a 6 key KeyFob or an additional one you can also send Auto/Standby commands.
-
-Since version 1.5 the AP remote control reacts also on commands received via USB-Serial interface. Commands: "-1", "+1", "-10", "+10", "A" and "S". Both Newline and or CR are accepted at end of command from serial. This interfcae shall allow external applications like AvNav to control the AP functions.
-
 My special thanks to users of www.segeln-forum.de for testing.
+
+With the 433 MHz sender you can send -1 / +1 degree and -10 / +10 degrees. With a 6 key KeyFob or an additional one you can also send Auto/Standby commands.
+
+Since version 1.5 the AP remote control reacts also on commands received via USB-Serial interface. Supported commands: "-1", "+1", "-10", "+10", "A" and "S". Both Newline and or CR are accepted at end of command from serial. This interfcae shall allow external applications like AvNav to control the AP functions.
 
 ![Autopilot Remote](https://github.com/AK-Homberger/Seatalk-Autopilot-Remote-Control/blob/master/IMG_0857.JPG)
 
