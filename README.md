@@ -106,7 +106,7 @@ Remote Control (KeyFob):  [Link](https://www.amazon.de/XCSOURCE-Elektrische-Univ
 
 # Updates:
 
-- Version 1.5 - 16.12.20: Added command reveive from USB-Serial to allow contol from AvNav.
+- Version 1.5 - 16.12.20: Added command receive from USB-Serial to allow control from AvNav.
 - Version 1.4 - 28.11.20: Changed R2 and R3 back to 68 KOhm / 27 kOhm. 6.8 KOhm would impact the Seatalk high voltage level too much.
 - Version 1.4 - 27.11.20: Changed R2 and R3 to 6.8 KOhm to eliminate problems with some 74LS07 devices (see issue "R3 wrong value?" for details).
 - Version 1.4 - 27.07.20: Use of millis() funtion to avoid delay() and timer counter in loop(). Improved detection of 433MHz keys.
