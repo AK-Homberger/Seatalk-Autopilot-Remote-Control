@@ -12,7 +12,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// Version 1.4, 27.07.2020, AK-Homberger
+// Version 1.5, 16.12.2020, AK-Homberger
 
 #include <avr/pgmspace.h>
 #include <RCSwitch.h>
@@ -34,6 +34,9 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #define BEEP_DURATION 150  // 150 ms beep time
 
 RCSwitch mySwitch = RCSwitch();
+
+String inputString = "";         // a String to hold incoming data
+bool stringComplete = false;  // whether the string is complete
 
 const unsigned long Key_Minus_1 PROGMEM = 1111001; // Change values to individual values programmed to remote control
 const unsigned long Key_Plus_1 PROGMEM = 1111002;
@@ -150,6 +153,9 @@ void setup() {
   Serial1.begin( 4800, SERIAL_9N1 );  // Set the Seatalk modus - 9 bit
   Serial1.setTimeout(5);
 
+  // reserve 20 bytes for the inputString:
+  inputString.reserve(20);
+  
   mySwitch.enableReceive(4);  // RF Receiver on inerrupt 4 => that is pin 7 on Micro
 
   pinMode(9, OUTPUT);         // LED to show if keys are received
@@ -173,6 +179,7 @@ void BeepOn(void) {
 
   sendDatagram(ST_BeepOn);
   digitalWrite(20, HIGH);
+  //Serial.println("On");
   beep_time = millis();
   beep_status = true;
 }
@@ -184,13 +191,33 @@ void BeepOff(void) {
   if (beep_status == true && millis() > beep_time + BEEP_DURATION) {
     sendDatagram(ST_BeepOff);
     digitalWrite(20, LOW);
+    //Serial.println("Off");
     beep_status = false;
   }
 }
 
 
-void loop() {
+/*
+  SerialEvent occurs whenever a new data comes in the hardware serial RX. This
+  routine is run between each time loop() runs, so using delay inside loop can
+  delay response. Multiple bytes of data may be available.
+*/
+void serialEvent() {
+  while (Serial.available()) {
+    // get the new byte:
+    char inChar = (char)Serial.read();
+    // add it to the inputString:
+    if ((inChar != '\n') && (inChar != '\r')) inputString += inChar;
+    // if the incoming character is a newline or CR, set a flag so the main loop can react
+    if ((inChar == '\n') || (inChar == '\r')) {
+      stringComplete = true;
+    }
+  }
+}
 
+
+void loop() {
+ 
   char AWS[4] = "";
   unsigned long value = 0;
 
@@ -217,6 +244,23 @@ void loop() {
   if (mySwitch.available()) {
     value = mySwitch.getReceivedValue();
     mySwitch.resetAvailable();
+  }
+
+  serialEvent();  // Read serial to detect command from USB (until Newline or CR)
+  
+  if (stringComplete) {
+        
+    // Compare string
+    if(inputString == "-1") value = Key_Minus_1;
+    if(inputString == "+1") value = Key_Plus_1;
+    if(inputString == "-10") value = Key_Minus_10;
+    if(inputString == "+10") value = Key_Plus_10;
+    if(inputString == "A") value = Key_Auto;
+    if(inputString == "S") value = Key_Standby;
+    
+    // clear the string
+    inputString = "";
+    stringComplete = false;
   }
 
   if (value > 0 && millis() > key_time + KEY_DELAY) {
