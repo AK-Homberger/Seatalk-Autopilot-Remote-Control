@@ -46,7 +46,7 @@ If you get a "Send Error" problem (with 12 Volt connected) then the solution is 
 # Software
 The Seatalk communication is a 9 bit serial protocol. This is not directly supported from Arduino. But I found a working 9 bit hardware serial implementation. For convenience, I have added the working source code here, because there are different versions available (in github and elsewhere).
 
-Caution: The 9 bit hardware serial implementaion is depending on the version of the Ardunio IDE and the ProMicro board information. IDE 1.6.13  and board version 1.6.15 are working with the files in "NewHWSworking". Later versions (e.g. 1.8.10) changed the hardware serial implementation and the 9 bit changes will work work with files in "HardwareSerial9bit".
+Caution: The 9 bit hardware serial implementaion is depending on the version of the Ardunio IDE and the ProMicro board information. IDE 1.6.13  and board version 1.6.15 are working with the files in "NewHWSworking". Later versions (e.g. 1.8.10) changed the hardware serial implementation and the 9 bit changes will work work with files in "HardwareSerial9bit".For the Leonardo board please use the **Arduino AVR Boards** version 1.8.3. Since version 1.8.4 the code has changed again and the 9 bit implementation is not working.
 
 For newer IDE versions the three files from "HardwareSerial9bit" (or "NewHWSworking" for older IDE) have to be copied into the Arduino directory on your local PC e.g.: "C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino".
 
