@@ -40,9 +40,9 @@ MFDs with Lighthose II will react on the Seatalk alarm function with a short bee
 
 # Problem with some 7407 variants
 It seems that there are different types of 7407 devices available with slightly different electrical charcteristics. See issue "R3 wrong value?" for details.
-If you get a "Send Error" problem (with 12 Volt connected) then the solution is to lower the value of R3. It is important to check two voltages. With Seatalk signal line high (12 Volt) the voltage on pin 3 of 74LS07 (or alternatively on cathode of D1, which is easier to measure) should be above 2 Volt. When Seatalk pulled to GND (low) the voltage on pin 3 should be less than 0.8 Volt.
+If you get a "Send Error" problem (with 12 Volt connected) then the solution is to lower the value of R3. It is important to check two voltages. With Seatalk signal line high (12 Volt) the voltage on pin 3 of 7407 (or alternatively on cathode of D1, which is easier to measure) should be above 2 Volt. When Seatalk pulled to GND (low) the voltage on pin 3 should be less than 0.8 Volt.
 
-It' usually better to use the 74LS07 variant of the device because it need less power then the original TTL 7407. Alternatively, you can use also the CMOS version of the 7407 device [M74HC07](https://www.digchip.com/datasheets/download_datasheet.php?id=2014542&part-number=74HC07). This device does not consume any relevant current on the input.
+It's usually better to use the 74LS07 variant of the device, because it needs less power then the original TTL 7407. Alternatively, you can use also the CMOS version of the 7407 device [M74HC07](https://www.digchip.com/datasheets/download_datasheet.php?id=2014542&part-number=74HC07). This device does not consume any relevant current on the input.
 
 # Software
 The Seatalk communication is a 9 bit serial protocol. This is not directly supported from Arduino. But I found a working 9 bit hardware serial implementation. For convenience, I have added the working source code here, because there are different versions available (in github and elsewhere).
